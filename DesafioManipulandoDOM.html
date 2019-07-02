@@ -1,0 +1,64 @@
+<!-- <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Introdução</title>
+  </head>
+  <body>
+    <div id="container">
+      <button onClick="mostra()">qudrado</button>
+    </div>
+    <script>
+      var btn = document.querySelector("div#container button");
+
+      function mostra() {
+        var quadrado = document.createElement("div");
+        quadrado.style.width = 100;
+        quadrado.style.height = 100;
+        quadrado.style.backgroundColor = "f00";
+
+        var elementContainer = document.querySelector("#container");
+        elementContainer.style.display = "flex";
+        elementContainer.appendChild(quadrado);
+        console.log("aa");
+      }
+    </script>
+  </body>
+</html> -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Introdução</title>
+  </head>
+  <body>
+    <div id="container">
+      <button id="botao">qudrado</button>
+    </div>
+    <script>
+      var btn = document.getElementById("botao");
+      var elementContainer = document.querySelector("#container");
+
+      function getRandomColor() {
+        var letters = "0123456789ABCDEF";
+        var color = "#";
+        for (var i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+
+      btn.onclick = function() {
+        var quadrado = document.createElement("div");
+        quadrado.style.width = 100;
+        quadrado.style.height = 100;
+        quadrado.style.backgroundColor = "f00";
+
+        quadrado.onmouseover = function() {
+          quadrado.style.backgroundColor = getRandomColor();
+        };
+
+        elementContainer.appendChild(quadrado);
+      };
+    </script>
+  </body>
+</html>
